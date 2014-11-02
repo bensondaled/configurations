@@ -1,5 +1,3 @@
-
-
 export XAPPLRESDIR="/Applications/MATLAB/MATLAB_Compiler_Runtime/v716/X11/app-defaults"
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/Applications/MATLAB/MATLAB_Compiler_Runtime/v716/runtime/maci64:/Applications/MATLAB/MATLAB_Compiler_Runtime/v716/sys/os/maci64:/Applications/MATLAB/MATLAB_Compiler_Runtime/v716/bin/maci64:/System/Library/Frameworks/JavaVM.framework/JavaVM:/System/Library/Frameworks/JavaVM.framework/Libraries"
 
@@ -30,6 +28,7 @@ alias tma='tmux attach'
 alias rm='rm -i'
 PS1="> "
 source ~/.custom_resources/tmux/bash_completion_tmux.sh
+export PYTHONPATH=$PYTHONPATH:/Users/Benson/.custom_resources/python
 
 export PATH=/Users/Benson/.personal/:$PATH
 #so that typing 'pswd' will find the executable in the right place
