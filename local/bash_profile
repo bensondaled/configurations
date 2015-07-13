@@ -1,0 +1,32 @@
+# Navigation aliases
+alias desk='cd ~/Desktop'
+alias phd='cd ~/PhD/'
+
+# Utility aliases
+alias eject='diskutil unmount'
+alias py='ipython'
+alias password='pswd'
+alias rondo='ssh rondo'
+alias workon='~/.custom_bin/launch_programming_session'
+alias rm='rm -i'
+
+# Typo aliases
+alias ks='ls'
+alias ;s='ls'
+alias cd..='cd ..'
+
+# Aesthetic modifications
+PS1="> "
+
+# Custom paths
+export PYTHONPATH=$PYTHONPATH:/Users/Benson/.custom_resources/python
+#export PATH=/Users/Benson/.personal/:$PATH
+
+# tmux
+source ~/.custom_resources/tmux/bash_completion_tmux.sh
+
+# anaconda 2.3.0
+export PATH="/Users/ben/anaconda/bin:$PATH"
+
+# clear all
+clear && printf '\e[3J'
