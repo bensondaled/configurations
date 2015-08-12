@@ -8,7 +8,7 @@ endif
 
 let g:tslime_loaded = 1
 let g:matlab_cmd = "matlab -nosplash -nodesktop"
-let g:tmux_sessionname = "vimlab"
+let g:tmux_sessionname = g:tmux_session_name
 let g:tmux_windowname = "0"
 let g:tmux_panenumber = "0"
 
@@ -61,10 +61,6 @@ endfunction
 
 " LUIS STUFF
 "
-
-function! LaunchTmux()
-	call system("set oldTMUX=$TMUX && export TMUX='' && tmux new-session -d -s vimlab & export TMUX=$oldTMUX")
-endfunction
 
 function! LaunchPy()
 	call Send_to_Tmux(g:matlab_cmd . "\n")

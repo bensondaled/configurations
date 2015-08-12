@@ -20,5 +20,3 @@ set nu
 set hlsearch
 
 nnoremap <silent> <Space> :nohlsearch<CR><Esc>
-
-source /Users/ben/.custom/resources/vim/tslime.vim

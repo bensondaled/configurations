@@ -1,5 +1,7 @@
 #!/bin/bash
 
+vim_options="$@"
+
 # tmux session name determination
 SESH_PREFIX="sesh"
 SESH_NUM=0
@@ -15,14 +17,14 @@ while [ $VALID == 0 ]; do
     fi
 done
 
+vim_options="$vim_options -c 'let tmux_session_name=\"$SESH_NAME\"'"
+vim_options="$vim_options -c 'source ~/.custom/resources/vim/tslime.vim'"
+
 tmux new-session -d -s $SESH_NAME
 tmux select-window -t $SESH_NAME:0
-if [ "$#" -eq  "0" ]
-    then
-        tmux send-keys -t $SESH_NAME "vim" Enter
-    else
-        tmux send-keys -t $SESH_NAME "vim $1" Enter
-fi
+# launch vim
+tmux send-keys -t $SESH_NAME "vim ${vim_options}" Enter
+
 #tmux split-window -h 'ipython' #if you want exiting ipython to close the pane
 tmux split-window -h #if you don't want exiting ipython to close the pane (1/2)
 tmux send-keys 'ipython' Enter #if you don't want exiting ipython to close the pane (2/2)
