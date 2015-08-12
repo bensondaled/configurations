@@ -8,7 +8,7 @@ endif
 
 let g:tslime_loaded = 1
 let g:matlab_cmd = "matlab -nosplash -nodesktop"
-let g:tmux_sessionname = "vimlab"
+let g:tmux_sessionname = g:tmux_session_name
 let g:tmux_windowname = "0"
 let g:tmux_panenumber = "0"
 

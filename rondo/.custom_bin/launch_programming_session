@@ -29,6 +29,24 @@ else
     matlab_options=""
 fi
 
+
+# tmux session name determination
+SESH_PREFIX="sesh"
+SESH_NUM=0
+VALID=0
+while [ $VALID == 0 ]; do
+    SESH_NAME="$SESH_PREFIX$SESH_NUM"
+    tmux has-session -t $SESH_NAME
+    if [ $? == 0 ] 
+     then
+        ((SESH_NUM++))
+     else
+        VALID=1
+    fi
+done
+
+vim_options="$vim_options -c 'let tmux_session_name=\"$SESH_NAME\"'"
+vim_options="$vim_options -c 'source ~/.custom_resources/vim/tslime.vim'"
 if [ "$python_flag" = true ] ; then
     vim_options="$vim_options -c 'let pro_lang=\"py\"'"
 elif [ "$matlab_flag" = true ] ; then
@@ -36,17 +54,18 @@ elif [ "$matlab_flag" = true ] ; then
 fi
 
 # init tmux session
-tmux new-session -d -s vimlab
-tmux select-window -t vimlab:0
+tmux new-session -d -s $SESH_NAME
+tmux select-window -t $SESH_NAME:0
 
 # launch vim
-tmux send-keys -t vimlab "vim ${vim_options}" Enter
+tmux send-keys -t $SESH_NAME "vim ${vim_options}" Enter
 
 # launch programming
 #tmux split-window -h 'ipython' #if you want exiting ipython to close the pane
 tmux split-window -h #if you don't want exiting ipython to close the pane (1/2)
 tmux send-keys 'qrsh' Enter
-tmux send-keys -t vimlab "cd ${cwd}" Enter
+tmux send-keys 'source activate myenv' Enter #ADDED JUST FOR ENVS
+tmux send-keys -t $SESH_NAME "cd ${cwd}" Enter
 if [ "$python_flag" = true ] ; then
     tmux send-keys 'ipython' Enter #if you don't want exiting ipython to close the pane (2/2)
 elif [ "$matlab_flag" = true ] ; then
@@ -56,4 +75,4 @@ else
 fi
 
 # attach tmux
-tmux attach-session -t vimlab
+tmux attach-session -t $SESH_NAME
