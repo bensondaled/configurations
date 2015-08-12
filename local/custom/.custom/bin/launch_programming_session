@@ -1,14 +1,29 @@
 #!/bin/bash
 
-tmux new-session -d -s vimlab
-tmux select-window -t vimlab:0
+# tmux session name determination
+SESH_PREFIX="sesh"
+SESH_NUM=0
+VALID=0
+while [ $VALID == 0 ]; do
+    SESH_NAME="$SESH_PREFIX$SESH_NUM"
+    tmux has-session -t $SESH_NAME
+    if [ $? == 0 ] 
+     then
+        ((SESH_NUM++))
+     else
+        VALID=1
+    fi
+done
+
+tmux new-session -d -s $SESH_NAME
+tmux select-window -t $SESH_NAME:0
 if [ "$#" -eq  "0" ]
     then
-        tmux send-keys -t vimlab "vim" Enter
+        tmux send-keys -t $SESH_NAME "vim" Enter
     else
-        tmux send-keys -t vimlab "vim $1" Enter
+        tmux send-keys -t $SESH_NAME "vim $1" Enter
 fi
 #tmux split-window -h 'ipython' #if you want exiting ipython to close the pane
 tmux split-window -h #if you don't want exiting ipython to close the pane (1/2)
 tmux send-keys 'ipython' Enter #if you don't want exiting ipython to close the pane (2/2)
-tmux attach-session -t vimlab
+tmux attach-session -t $SESH_NAME

@@ -1,13 +1,14 @@
 # Navigation aliases
 alias desk='cd ~/Desktop'
-alias phd='cd ~/PhD/'
+alias phd='cd ~/phd/'
+alias code='cd ~/code'
 
 # Utility aliases
 alias eject='diskutil unmount'
 alias py='ipython'
 alias password='pswd'
 alias rondo='ssh rondo'
-alias workon='~/.custom_bin/launch_programming_session'
+alias workon='~/.custom/bin/launch_programming_session'
 alias rm='rm -i'
 
 # Typo aliases
@@ -19,8 +20,10 @@ alias cd..='cd ..'
 PS1="> "
 
 # Custom paths
-export PYTHONPATH=$PYTHONPATH:/Users/Benson/.custom_resources/python
+export PYTHONPATH="$PYTHONPATH:/Users/ben/.custom_resources/python"
+export PYTHONPATH="$PYTHONPATH:/Users/ben/code/pyfluo/"
 #export PATH=/Users/Benson/.personal/:$PATH
+export LD_LIBRARY_PATH="/usr/local/bin:/usr/local/lib:$LD_LIBRARY_PATH"
 
 # tmux
 source ~/.custom_resources/tmux/bash_completion_tmux.sh

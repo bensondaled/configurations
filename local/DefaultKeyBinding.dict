@@ -6,7 +6,7 @@
     "~." =  ( "insertText:", "→");
     "~," =  ( "insertText:", "←");
     "~/" =  ( "insertText:", "↑");
-    "~\\" =  ( "insertText:", "↓");
+    "~^/" =  ( "insertText:", "↓");
     "~a" =  ( "insertText:", "α");
     "~b" =  ( "insertText:", "β");
     "~g" =  ( "insertText:", "γ");
