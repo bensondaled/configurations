@@ -13,4 +13,5 @@
     "~d" =  ( "insertText:", "δ");
     "~E" =  ( "insertText:", "ε");
     "~k" =  ( "insertText:", "κ");
+    "~t" =  ( "insertText:", "τ");
 }
