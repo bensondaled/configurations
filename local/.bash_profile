@@ -12,11 +12,11 @@ alias workon='~/.custom/bin/launch_programming_session'
 alias rm='rm -i'
 grabjb ()
 {
-    rsync -vhz --progress apps:/jukebox/wang/deverett/$* .
+    rsync -vrhz --progress apps:/jukebox/wang/deverett/$* .
 }
 grab ()
 {
-    rsync -vhz --progress apps:~/$* .
+    rsync -vrhz --progress apps:~/$* .
 }
 
 # Typo aliases

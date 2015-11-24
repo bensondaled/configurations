@@ -7,3 +7,4 @@ cp -r ~/.ipython/profile_default/startup/ ./ipython_startup
 cp -r ~/Library/KeyBindings/DefaultKeyBinding.dict .
 cp ~/.vimrc .
 cp ~/.tmux.conf .
+cp -r ~/.matplotlib/matplotlibrc .
