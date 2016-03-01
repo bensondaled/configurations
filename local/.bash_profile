@@ -14,9 +14,11 @@ alias rondo='ssh rondo'
 alias spock='ssh spock'
 alias workon='~/.custom/bin/launch_programming_session'
 alias rm='rm -i'
-alias gc='git commit -m'
+alias gm='git commit -m'
 alias gp='git push'
 alias ga='git add -A .'
+alias gt='git status'
+
 grabjb ()
 {
     rsync -vrhz --progress apps:/jukebox/wang/deverett/$* .
