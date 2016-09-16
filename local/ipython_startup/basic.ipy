@@ -1,0 +1,2 @@
+%matplotlib osx
+from soup.classic import *

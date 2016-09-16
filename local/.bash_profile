@@ -1,18 +1,20 @@
 # Navigation aliases
 alias desk='cd ~/Desktop'
 alias phd='cd ~/phd/'
-alias data='cd ~/phd/data'
+alias data='cd ~/data'
 alias code='cd ~/code'
 
 # Utility aliases
 alias eject='diskutil unmount'
+alias p='cd ~/code/puffs/analysis/c5'
 alias py='ipython'
+alias jn='jupyter notebook'
 alias py3='source deactivate;source activate py35'
-alias py2='source deactivate'
+alias py2='source deactivate;source activate py2'
 alias password='pswd'
 alias rondo='ssh rondo'
 alias spock='ssh spock'
-alias workon='~/.custom/bin/launch_programming_session'
+alias workon='~/.custom/bin/start_coding.sh'
 alias rm='rm -i'
 alias gm='git commit -m'
 alias gp='git push'
@@ -21,15 +23,19 @@ alias gt='git status'
 
 grabjb ()
 {
-    rsync -vrhz --progress apps:/jukebox/wang/deverett/$* .
+    rsync -vrhzP --inplace --progress apps:/jukebox/wang/deverett/$1 ${2:-.}
 }
 grab ()
 {
-    rsync -vrhz --progress apps:~/$* .
+    rsync -vrhzP --inplace --progress apps:~/$* .
 }
 grabwang ()
 {
-    rsync -vrhz --progress apps:/jukebox/wang/$* .
+    rsync -vrhzP --inplace --progress apps:/jukebox/wang/$* .
+}
+grabfs ()
+{
+    rsync -vrhzP --inplace --progress apps:/fastscratch/deverett/$* .
 }
 
 # Typo aliases

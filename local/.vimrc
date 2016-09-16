@@ -20,3 +20,5 @@ set nu
 set hlsearch
 
 nnoremap <silent> <Space> :nohlsearch<CR><Esc>
+
+set backspace=indent,eol,start
