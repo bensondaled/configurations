@@ -224,6 +224,14 @@ function! RunTmuxPythonCell(restore_cursor)
   end
 endfunction
 
+function! AdvancePythonCell()
+  " added by BD sept25/2016, advances to next cell without running anything
+  silent :?##?;/##/y a
+  execute "normal! ']"
+  execute "normal! j"
+  let @a=join(split(@a, "\n")[1:-2], "\n")
+endfunction
+
 function! RunTmuxPythonAllCellsAbove()
   " Executes all the cells above the current line. That is, everything from
   " the beginning of the file to the closest ## above the current line
@@ -266,6 +274,6 @@ call InitVariable("g:cellmode_default_mappings", 1)
 
 if g:cellmode_default_mappings
     vnoremap <silent> <C-M> :call RunTmuxPythonChunk()<CR>
-    nnoremap <silent> <C-M> :call RunTmuxPythonCell(0)<CR>
-    noremap <silent> <C-g> :call RunTmuxPythonCell(1)<CR>
+    nnoremap <silent> <C-M> :call RunTmuxPythonCell(1)<CR>
+    nnoremap <silent> <tab> :call AdvancePythonCell()<CR>
 endif

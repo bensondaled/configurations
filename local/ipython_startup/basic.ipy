@@ -1,2 +1,4 @@
 %matplotlib osx
-from soup.classic import *
+from soup import *
+%load_ext autoreload
+%autoreload 1
