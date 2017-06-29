@@ -1,4 +1,5 @@
-%matplotlib osx
+import matplotlib
+matplotlib.use('tkagg')
 from soup import *
 %load_ext autoreload
-%autoreload 1
+%autoreload 2
