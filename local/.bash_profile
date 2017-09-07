@@ -92,3 +92,9 @@ fi
 
 # added by Anaconda3 4.2.0 installer
 export PATH="/Users/ben/anaconda/bin:$PATH"
+
+# added by Anaconda3 4.4.0 installer
+export PATH="/anaconda/bin:$PATH"
+
+# added by Anaconda3 4.4.0 installer
+export PATH="/Users/ben/anaconda/bin:$PATH"

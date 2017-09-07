@@ -224,12 +224,17 @@ function! RunTmuxPythonCell(restore_cursor)
   end
 endfunction
 
-function! AdvancePythonCell()
+function! NextPythonCell()
   " added by BD sept25/2016, advances to next cell without running anything
-  silent :?##?;/##/y a
-  execute "normal! ']"
+  " modified by BC 2017-06-29
+  silent /##/
   execute "normal! j"
-  let @a=join(split(@a, "\n")[1:-2], "\n")
+endfunction
+
+function! PreviousPythonCell()
+  " modified by BC 2017-06-29
+  silent ?##?
+  execute "normal! nj"
 endfunction
 
 function! RunTmuxPythonAllCellsAbove()
@@ -275,5 +280,6 @@ call InitVariable("g:cellmode_default_mappings", 1)
 if g:cellmode_default_mappings
     vnoremap <silent> <C-M> :call RunTmuxPythonChunk()<CR>
     nnoremap <silent> <C-M> :call RunTmuxPythonCell(1)<CR>
-    nnoremap <silent> <tab> :call AdvancePythonCell()<CR>
+    nnoremap <silent> <tab> :call NextPythonCell()<CR>
+    nnoremap <silent> <S-Tab> :call PreviousPythonCell()<CR>
 endif
