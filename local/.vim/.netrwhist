@@ -1,9 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/ben/code/eyeblink/expts'
-let g:netrw_dirhist_2='/Users/ben/.matplotlib'
-let g:netrw_dirhist_3='/Users/ben/code/pyfluo/pyfluo/util/CellMagicWand'
-let g:netrw_dirhist_4='/Users/ben/.matplotlib/stylelib'
-let g:netrw_dirhist_5='/Users/ben/code/eyeblink/util'
-let g:netrw_dirhist_6='/Users/ben/phd/experiments/puffs/docs'
-let g:netrw_dirhist_7='/Users/ben/code/frs178/trumpometer'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/ben/code/puffs/util/extras'
+let g:netrw_dirhist_2='/Users/ben/Desktop'
+let g:netrw_dirhist_3='/Users/ben/code/scikit-behave/skbehave/visualization'
+let g:netrw_dirhist_4='/Users/ben/code/scikit-behave/skbehave'

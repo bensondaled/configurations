@@ -1,5 +1,13 @@
-import matplotlib
-matplotlib.use('tkagg')
 from soup import *
 %load_ext autoreload
 %autoreload 2
+
+# insane hack needed b/c of qt5gg
+import time,os,threading
+def focus():
+    t0 = time.time()
+    while time.time()-t0 < 1:
+        if 1000*round(time.time()-t0) % 200 == 0:
+            os.system("osascript -e 'activate application \"Terminal\"'")
+threading.Thread(target=focus).start()
+
