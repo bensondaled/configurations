@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/ben/code/puffs/util/extras'
-let g:netrw_dirhist_2='/Users/ben/Desktop'
-let g:netrw_dirhist_3='/Users/ben/code/scikit-behave/skbehave/visualization'
-let g:netrw_dirhist_4='/Users/ben/code/scikit-behave/skbehave'
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/bdd/Library/CloudStorage/GoogleDrive-bendeverett@gmail.com/My Drive/residency/research/eeg/multitaper_toolbox'
+let g:netrw_dirhist_6='/Volumes/GoogleDrive/My Drive/code/ecmo/keys'
+let g:netrw_dirhist_5='/Users/bdd/cloud/code/web-sandbox/static/js'
+let g:netrw_dirhist_4='/Users/bdd/Desktop/pubmed_data/data'
+let g:netrw_dirhist_3='/Users/bdd/python_pkgs/pyfluo/pyfluo/images'
+let g:netrw_dirhist_2='/Users/bdd/Desktop/anki_to_add'
+let g:netrw_dirhist_1='/Users/bdd/Desktop/connect4'

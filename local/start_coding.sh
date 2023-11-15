@@ -18,6 +18,8 @@ while [ $VALID == 0 ]; do
     fi
 done
 
+echo "Launching $SESH_NAME"
+
 vim_options="$vim_options -c 'let cellmode_tmux_sessionname=\"$SESH_NAME\"'"
 vim_options="$vim_options -c 'let cellmode_use_tmux=1'"
 vim_options="$vim_options -c 'let cellmode_tmux_panenumber=1'"
