@@ -1,1 +1,0 @@
-note that I haven't flushed out how the copies in update.sh occur, but in general look for hidden files (i.e. .X) because those will be most recent

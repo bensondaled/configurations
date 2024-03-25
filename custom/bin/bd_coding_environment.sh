@@ -29,19 +29,19 @@ vim_options="$vim_options -c 'let cellmode_tmux_windowname=\"$WINDOW_NAME\"'"
 tmux new-session -d -s $SESH_NAME
 tmux rename-window $WINDOW_NAME
 
-# fix pasteboard issue, see https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard and my notes
 dir0=`pwd`
-tmux send-keys "reattach-to-user-namespace -l zsh"
-tmux send-keys "source ~/.bash_profile" Enter
-tmux send-keys "cd $dir0 && clear" Enter
+# fix pasteboard issue, see https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard and my notes
+#tmux send-keys "reattach-to-user-namespace -l zsh"
+#tmux send-keys "source ~/.zshrc" Enter
+#tmux send-keys "cd $dir0 && clear" Enter
 
 # launch vim
 tmux send-keys -t $SESH_NAME "vim ${vim_options}" Enter
 
 #tmux split-window -h 'ipython' #if you want exiting ipython to close the pane
 tmux split-window -h #if you don't want exiting ipython to close the pane (1/2)
-tmux send-keys 'reattach-to-user-namespace -l zsh' Enter  # fix for pasteboard bug part 1
-tmux send-keys 'source ~/.bash_profile' Enter  # fix for pasteboard bug part 2
+#tmux send-keys 'reattach-to-user-namespace -l zsh' Enter  # fix for pasteboard bug part 1
+#tmux send-keys 'source ~/.zshrc' Enter  # fix for pasteboard bug part 2
 tmux send-keys "cd $dir0 && clear" Enter
 tmux send-keys 'ipython' Enter #if you don't want exiting ipython to close the pane (2/2)
 tmux select-pane -t 0
